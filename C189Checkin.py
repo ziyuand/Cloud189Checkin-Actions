@@ -26,18 +26,9 @@ def main():
     netdiskBonus = response.json()['netdiskBonus']
     if(response.json()['isSign'] == "false"):
         print(f"未签到，签到获得{netdiskBonus}M空 间")
-        import requests
-        api = "https://sc.ftqq.com/SCU90007Tbf56e1a2851fa801dfd7a29471692ed35e7113a4ed0e3.send"
-        title = u"天翼云盘签到通知"
-        content = "未签到，签到获得{netdiskBonus}M空 间"
-        #服务器又炸啦！
-        ##请尽快修复服务器
-        """
-        data = {
-           "text":title,
-           "desp":content
-        }
-        req = requests(api,data = data)
+        url = 'https://sc.ftqq.com/SCU90007Tbf56e1a2851fa801dfd7a29471692ed35e7113a4ed0e3.send?text=未签到，签到获得{netdiskBonus}M空 间';
+        req = request.Request(url)
+        res = request.urlopen(req)
     else:
         print(f"已经签到过了，签到获得{netdiskBonus}M空间")
         import requests
