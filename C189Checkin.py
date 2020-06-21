@@ -25,7 +25,7 @@ def main():
     response = s.get(surl,headers=headers)
     netdiskBonus = response.json()['netdiskBonus']
     if(response.json()['isSign'] == "false"):
-        print(f"未签到，签到获得{netdiskBonus}M空间")
+        print(f"未签到，签到获得{netdiskBonus}M空 间")
     else:
         print(f"已经签到过了，签到获得{netdiskBonus}M空间")
     headers = {
