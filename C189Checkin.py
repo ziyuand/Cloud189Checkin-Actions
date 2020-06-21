@@ -26,28 +26,7 @@ def main():
     netdiskBonus = response.json()['netdiskBonus']
     if(response.json()['isSign'] == "false"):
         print(f"未签到，签到获得{netdiskBonus}M空间")
-        #Python3通过Server酱的API接口让你的消息推送到你的微信。
-
-        #encoding:utf-8
-
-        import requests
-
-        api = "SCU90007Tbf56e1a2851fa801dfd7a29471692ed35e7113a4ed0e3"
-
-        title = "紧急通知"
-
-        content = "这是程序发的信息，请查收"
-
-        data = {
-
-        "text":title,
-
-        "desp":content
-
-        }
-
-        req = requests.post(api,data = data)
-        else:
+    else:
         print(f"已经签到过了，签到获得{netdiskBonus}M空间")
     headers = {
         'User-Agent':'Mozilla/5.0 (Linux; Android 5.1.1; SM-G930K Build/NRD90M; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/74.0.3729.136 Mobile Safari/537.36 Ecloud/8.6.3 Android/22 clientId/355325117317828 clientModel/SM-G930K imsi/460071114317824 clientChannelId/qq proVersion/1.0.6',
